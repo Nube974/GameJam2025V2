@@ -6,6 +6,10 @@ public class AudioManager : MonoBehaviour
 	public AudioSource audioSource;
 	private int musicIndex = 0;
 	public bool nextMusic = false;
+	public GameObject player ;
+	public GameObject zoneTeleport ;
+	public GameObject background1 ;
+	public GameObject background2 ;
 	
     void Start()
     {
@@ -41,6 +45,14 @@ public class AudioManager : MonoBehaviour
 				PlayNextSong();
 				nextMusic = true;
 			}
+        }
+		if (collision.gameObject.CompareTag("TeleportTrigger"))
+        {
+            // Contact principal
+			player.transform.position = zoneTeleport.transform.position;
+			PlayNextSong();
+			background1.SetActive(false);
+			background2.SetActive(true);
         }
 	}
 }

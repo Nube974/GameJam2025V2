@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 100f;     // Vie max
     private float currentHealth;       // Vie actuelle
     public Transform healthBar;        // Barre de vie (UI ou sprite enfant)
-
+	public GameObject player ;
+	public GameObject zoneTeleport ;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
